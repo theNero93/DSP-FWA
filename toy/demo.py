@@ -66,6 +66,8 @@ def setup(args):
     num_class = 2
     if args.arch.lower() == 'sppnet':
         net = SPPNet(backbone=args.layers, num_class=num_class)
+    else:
+        raise NotImplementedError('{} Model not Implemented'.format(args.arch))
     net = net.cuda()
     net.eval()
     return net

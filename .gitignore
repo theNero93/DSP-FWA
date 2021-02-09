@@ -1,2 +1,8 @@
 
 ckpt/
+
+py_utils/face_utils/__pycache__/
+
+py_utils/vid_utils/__pycache__/
+
+*.pyc

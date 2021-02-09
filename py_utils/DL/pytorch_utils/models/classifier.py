@@ -97,6 +97,6 @@ class SpatialPyramidPool2D(nn.Module):
             if out is None:
                 out = y.view(y.size()[0], -1)
             else:
-                out = torch.cat((out, y.view(y.size()[0], -1)), 1)
+                out = torch.cat((out, y.contiguous().view(y.size()[0], -1)), 1)
         return out
 

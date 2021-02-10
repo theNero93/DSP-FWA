@@ -27,7 +27,7 @@ def get_opt():
     # opt.dataset_path = './datasets/forensic/images'
     opt.multiclass = False
     opt.resize_interpolation = 'bilinear'
-    opt.load_size = -1
+    opt.load_size = 100
     opt.train_split = 'train'
     opt.train_size = 2500
     opt.val_split = 'val'

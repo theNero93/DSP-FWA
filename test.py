@@ -50,7 +50,7 @@ def test(args):
     else:
         raise ValueError("=> no checkpoint found at '{}'".format(model_path))
     opt = get_opt()
-    test_img, test_label = load_subset(opt, opt.test_split, -1)
+    test_img, test_label = load_subset(opt, opt.test_split, opt.load_size)
     y_pred = []
     for img in tqdm(test_img):
         pred = im_test(net, img, args)[0]
@@ -66,6 +66,6 @@ if __name__ == '__main__':
                         help='VGG, ResNet, SqueezeNet, DenseNet, InceptionNet')
     parser.add_argument('--layers', type=int, default='50')
     parser.add_argument('--input_size', type=int, default=224)
-    parser.add_argument('--save_dir', type=str, default='./baselines/dsp_fwa/ckpt/')
+    parser.add_argument('--save_dir', type=str, default='./src/baselines/dsp_fwa/ckpt/')
     parser.add_argument('--ckpt_name', type=str, default='SPP-res-50.pth')
     test(parser.parse_args())
